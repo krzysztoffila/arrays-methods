@@ -14,3 +14,8 @@ console.log(arrLength.length); // Output: 3
 const arrReverse = ['apple', 'banana', 'cherry'];
 arrReverse.reverse();
 console.log(arrReverse) // Output: ['cherry', 'banana', 'apple'];
+
+/* sort(): This method sorts the elements of an array in place and returns the sorted array. It can take an optional compare function as an argument */
+const arrSorted = ['banana', 'apple', 'cherry'];
+arrSorted.sort();
+console.log(arrSorted) // Output: ['apple', 'banana', 'cherry'];
