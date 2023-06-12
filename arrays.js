@@ -42,3 +42,41 @@ console.log(arrFromObj); // Output: ['apple', 'banana', 'cherry'];
 const arrToJoined = ['apple', 'banana', 'cherry'];
 const arrJoined = arrToJoined.join(' or ');
 console.log(arrJoined) // Output: 'apple or banana or cherry';
+
+/* toString(): This method returns a string representing the array and its elements. */
+const arrToString = ['apple', 'banana', 'cherry'];
+const str = arrToString.toString();
+console.log(str) // Output: 'apple,banana,cherry'
+
+/* pop(): This method removes the last element from an arrau and returns that element. */
+const arrFull = ['apple', 'banana', 'cherry'];
+const last = arrFull.pop();
+console.log(last); // Output: 'cherry'
+console.log(arrFull); // Output: ['apple', 'banana'];
+
+/* forEach(): Method executes a provided function once for each array element. It doesn't return anything, it just executes the callback function on each element of the array */
+let fruits = ['apple', 'banana', 'cherry'];
+fruits.forEach(function (item) {
+    console.log(item);
+}); // Output: apple, banana, cherry;
+
+/* shift(): Method removes the first element of an array and returns that removed element. This metgod changes the length of the array. */
+let fruitsAll = ['apple', 'banana', 'cherry'];
+let shiftFruit = fruits.shift();
+console.log(shiftFruit); // Output: 'apple'
+console.log(fruitsAll); // Output: ['banana', 'cherry];
+
+/* copyWithin(): Method shallow copies part of an array to another location in the same array and returns the modified array withoud modifying its length.Syntax.copyWithin(target, start, end) */
+let numbers = [1, 2, 3, 4, 5];
+numbers.copyWithin(2, 0, 2);
+console.log(numbers); // Output: [1, 2, 1, 2, 5];
+
+/* push(): Method adds one or more elements to the end of an arrat and returns the new length of the array. */
+let moreFruits = ['apple', 'banana'];
+moreFruits.push('cherry', 'orange');
+console.log(moreFruits); // Output: ['apple', 'banana', 'cherry', 'orange'];
+
+/* unshift(): Method adds one or more elements to the beginning of an array and returns the new length of the array. */
+let againFruits = ['cherry', 'orange'];
+againFruits.unshift('apple', 'banana');
+console.log(againFruits) // Output: ['apple', 'banana', 'cherry', 'orange'];
