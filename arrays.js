@@ -54,29 +54,73 @@ const last = arrFull.pop();
 console.log(last); // Output: 'cherry'
 console.log(arrFull); // Output: ['apple', 'banana'];
 
-/* forEach(): Method executes a provided function once for each array element. It doesn't return anything, it just executes the callback function on each element of the array */
+/* forEach(): This method executes a provided function once for each array element. It doesn't return anything, it just executes the callback function on each element of the array */
 let fruits = ['apple', 'banana', 'cherry'];
 fruits.forEach(function (item) {
     console.log(item);
 }); // Output: apple, banana, cherry;
 
-/* shift(): Method removes the first element of an array and returns that removed element. This metgod changes the length of the array. */
+/* shift(): This method removes the first element of an array and returns that removed element. This metgod changes the length of the array. */
 let fruitsAll = ['apple', 'banana', 'cherry'];
 let shiftFruit = fruits.shift();
 console.log(shiftFruit); // Output: 'apple'
 console.log(fruitsAll); // Output: ['banana', 'cherry];
 
-/* copyWithin(): Method shallow copies part of an array to another location in the same array and returns the modified array withoud modifying its length.Syntax.copyWithin(target, start, end) */
+/* copyWithin(): This method shallow copies part of an array to another location in the same array and returns the modified array withoud modifying its length.Syntax.copyWithin(target, start, end) */
 let numbers = [1, 2, 3, 4, 5];
 numbers.copyWithin(2, 0, 2);
 console.log(numbers); // Output: [1, 2, 1, 2, 5];
 
-/* push(): Method adds one or more elements to the end of an arrat and returns the new length of the array. */
+/* push(): This method adds one or more elements to the end of an arrat and returns the new length of the array. */
 let moreFruits = ['apple', 'banana'];
 moreFruits.push('cherry', 'orange');
 console.log(moreFruits); // Output: ['apple', 'banana', 'cherry', 'orange'];
 
-/* unshift(): Method adds one or more elements to the beginning of an array and returns the new length of the array. */
+/* unshift(): This method adds one or more elements to the beginning of an array and returns the new length of the array. */
 let againFruits = ['cherry', 'orange'];
 againFruits.unshift('apple', 'banana');
 console.log(againFruits) // Output: ['apple', 'banana', 'cherry', 'orange'];
+
+/* concat(): This method is used to merge two or more arratys. This metghod does not change the existing arrays, but instead returns a new array. */
+let andAgainFruits = ['apple', 'banana'];
+let andMoreFruits = ['cherry', 'orange'];
+let allOfThem = andAgainFruits.concat(andMoreFruits);
+console.log(allOfThem); // Output: ['apple', 'banana', 'cherry', 'orange'];
+
+/* splice(): This method changes the contents of an array by removing or replacimg existing elements and/or adding new elements in place. */
+const fruitsToSplice = ['apple', 'banana', 'cherry', 'orange'];
+//Syntax : arr.splice(start, deleteCount, item1, ..., itemN)
+fruitsToSplice.splice(2, 1, 'mango', 'kiwi');
+console.log(fruitsToSplice); // // Output: ['apple', 'banana', 'mango', 'kiwi', 'cherry', 'orange'];
+
+/* flat(): This method creates an new array with all sub-array elements concatenated into it recursively up the specified depth. */
+const numbersNoFlat = [1, [2, [3]], 4];
+const flatNumbers = numbersNoFlat.flat(Infinity);
+console.log(flatNumbers); // Output: [1, 2, 3, 4];
+
+/* lastIndexOf(): This method returns the last index at which a given element can be found in the array. */
+const numbersToSearch = [1, 2, 3, 4, 5, 3];
+const lastIndex = numbers.lastIndexOf(3);
+console.log(lastIndex); // Output: 5;
+
+/* indexOf(): This method returns the index of the occurrence of a specified element in an array. If the elements is not present, it returns -1. */
+const moreNumbers = [5, 10, 15, 20];
+const index = moreNumbers.indexOf(10);
+console.log(index); // Output: 1;
+
+/* of(): this method creates a new array instance with a variable number of arguments, reagardless of number or type the arguments. */
+const mixArr = Array.of(1, 2, 3, "four", true);
+console.log(mixArr); // Output: [1, 2, 3, "four", true];
+
+/* every(): This method checks if all elements in an array pass a test(provided as a function). It return true if all elements pass the test; otherwise, it returns false */
+const evenArr = [2, 4, 6, 8];
+const isEven = (num) => num % 2 === 0;
+const result = evenArr.every(isEven);
+console.log(result); // Output: true;
+
+/* slice(): This method returns a shallow copy of a portion of an array into a new array object selected from begin to end(end not included). */
+const arrToSliced = [1, 2, 3, 4, 5];
+const slicedArr = arrToSliced.slice(2, 4);
+console.log(slicedArr); // Output: [3, 4];
+
+/* flatMap(): This method maps each element using a mapping function, then flattens the result into a new array. */
