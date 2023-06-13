@@ -124,3 +124,64 @@ const slicedArr = arrToSliced.slice(2, 4);
 console.log(slicedArr); // Output: [3, 4];
 
 /* flatMap(): This method maps each element using a mapping function, then flattens the result into a new array. */
+const arrToFlat = [1, 2, 3];
+const resultFlat = arrToFlat.flatMap(x => [x * 2]);
+console.log(resultFlat); // Output [2, 4, 6];
+
+/* findIndex(): This metgod returns the index of the firs element in an array that passes a test(provided as a funstion). If no element pases the test , it returns -1. */
+const highArr = [10, 20, 30, 40, 50];
+const greaterThan30 = (num) => num > 30;
+const giveMeTheIndex = arr.findIndex(greaterThan30);
+console.log(giveMeTheIndex); // Output: 3;
+
+/* find(): This method returns the value of the first element in an array that passes a test(provided as a function). If no element passes the test, it returns undefined */
+const againHighArr = [10, 20, 30, 40, 50];
+const showResult = arr.find(greaterThan30);
+console.log(showResult); // Output: 40;
+
+/* includes(): This method determines whether an array includes a certaind value among its entires, returning true or false as appropriate. */
+const someNumbers = [10, 20, 30, 40, 50];
+const has20 = someNumbers.includes(20);
+console.log(has20); // Output: true;
+
+/* entries(): This method returns a new Array Iterator object that contains the key/value pairs for each index in the array. */
+const letters = ["a", "b", "c"];
+const iteratorEntries = arr.entries();
+console.log(iteratorEntries.next().value); // Output: [0, "a"];
+console.log(iteratorEntries.next().value); // Output: [1, "b"];
+console.log(iteratorEntries.next().value); // Output: [2, "c"];
+
+/* reduce(): this metgod applies a function to each element of an array and reduces the array to a single value. */
+const denominations = [10, 20, 10, 20, 5, 5, 5, 5, 10, 10];
+// accumulator: It is the value returned from previous iteration of the function.
+// curretnValue: It is the current element being processed in the array.
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+});
+console.log(sum) // Output: 100;
+
+/* isArray(): This method deterines whether the passed value is an array or not. */
+const number = 123;
+console.log(Array.isArray(number)) // Output: false;
+
+/* filter(): This method creates a new array with all elements that pass the test implemented by the provided function. */
+const moneyArr = [10, 20, 20, 50, 100, 200];
+const filteredMoney = moneyArr.filter(number => {
+    return number > 20;
+}); // Output: [50, 100, 200];
+
+/* keys(): This method returns an array containing the kesy of the given object. */
+const myObj = {
+    a: 1,
+    b: 2,
+    c: 3,
+}
+const keysArray = Object.keys(myObj);
+console.log(keysArray); // Output ["a", "b", "c"];
+
+/* map(): This method creates a new array with the results of callung a provided function on every element in the callung array. */
+const numbersToDo = [1, 2, 3, 4, 5];
+const squaredNumbers = numbersToDo.map((number) => {
+    return number * number
+});
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25];  
